@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *
+        {
+            box-sizing:border-box;
+        }
+        .toggle_switch
+        {
+            display:inline-block;
+            width:100px;
+            height:50px;
+            background-color:darkgrey;
+        }
+        .toggle_switch .toggle_switches
+        {
+            display:block;
+            background-color:white;
+            width:40px;
+            height:40px;
+            position:relative;
+            top:5px;
+            left:5px;
+            transition:0.5s;
+        }
+    </style>
+</head>
+<body>
+<div class="toggle_switch" onclick="Button1()">
+    <span class="toggle_switches" id="button01"> </span>
+</div> <br><br>
+<div class="toggle_switch" onclick="Button2()">
+    <span class="toggle_switches" id="button02"> </span>
+</div> <br><br>
+<div class="toggle_switch" onclick="Button3()">
+    <span class="toggle_switches" id="button03"></span>
+</div> <br><br>
+<script>
+  let switch01=0;
+  function Button1()
+  {
+      if(switch01==0)
+      {
+          document.getElementById('button01').style.left='55px';
+          document.getElementById('button01').style.backgroundColor='lime';
+          switch01=1;
+          if((switch01+switch02+switch03)==3)
+          {
+              Button3();
+          }
+      }
+      else
+      {
+          document.getElementById('button01').style.left='5px';
+          document.getElementById('button01').style.backgroundColor='white';
+          switch01=0;
+      }
+  }
+  let switch02=0;
+  function Button2()
+  {
+      if(switch02==0)
+      {
+          document.getElementById('button02').style.left='55px';
+          document.getElementById('button02').style.backgroundColor='mediumpurple';
+          switch02=1;
+          if((switch01+switch02+switch03)==3)
+          {
+              Button1();
+          }
+      }
+      else
+      {
+          document.getElementById('button02').style.left='5px';
+          document.getElementById('button02').style.backgroundColor='white';
+          switch02=0;
+      }
+  }
+  let switch03=0;
+  function Button3()
+  {
+      if(switch03==0)
+      {
+          document.getElementById('button03').style.left='55px';
+          document.getElementById('button03').style.backgroundColor='mediumvioletred';
+          switch03=1;
+          if((switch01+switch02+switch03)==3)
+          {
+              Button2();
+          }
+      }
+      else
+      {
+          document.getElementById('button03').style.left='5px';
+          document.getElementById('button03').style.backgroundColor='white';
+          switch03=0;
+      }
+  }
+</script>
+</body>
+</html>
