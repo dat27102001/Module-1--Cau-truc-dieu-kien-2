@@ -14,7 +14,8 @@ function change01(value)
     {
         document.getElementById('01').src='https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg';
     }
-    check();}
+    check();
+}
 let number02=0;
 function change02(value)
 {
